@@ -65,6 +65,9 @@ $("body").on("click", ".btn-delete", function (event) {
 render();
 
 $('.inpSearch').on('input', function(){
+    if(!$('.searchResult').val()){
+        $('.searchResult').html('')
+    }
     fetch("http://localhost:8000/todos")
     .then((res) => res.json())
     .then((data) => {
